@@ -1,16 +1,23 @@
 package ee.iglu.sample;
 
+import ee.iglu.sample.greeter.Greeter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequiredArgsConstructor
 public class SampleController {
+
+    private final Greeter greeter;
 
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World!";
+        // Pebble classes are not visible thanks to implementation scope
+
+        return greeter.hello("World");
     }
 
 }

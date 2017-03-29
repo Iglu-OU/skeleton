@@ -1,0 +1,2 @@
+apply from: "$rootDir/gradle/build.java.gradle"
+apply plugin: "java-library"

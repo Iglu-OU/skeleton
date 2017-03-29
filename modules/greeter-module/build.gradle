@@ -1,0 +1,8 @@
+apply from: "$rootDir/gradle/build.javaLibrary.gradle"
+
+dependencies {
+    implementation(
+            'org.springframework:spring-context',
+            'com.mitchellbosecke:pebble',
+    )
+}
