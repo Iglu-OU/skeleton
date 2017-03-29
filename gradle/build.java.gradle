@@ -7,3 +7,9 @@ tasks.withType(JavaCompile) {
 	options.compilerArgs << '-parameters'
 	options.encoding = 'UTF-8'
 }
+
+dependencies {
+	compileOnly (
+			'org.projectlombok:lombok',
+	)
+}
