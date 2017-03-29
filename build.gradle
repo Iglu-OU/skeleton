@@ -24,6 +24,6 @@ apply from: "gradle/build.springBoot.gradle"
 
 dependencies {
     runtime(
-            project(':modules:sample-module'),
+            project(':modules:web-module'),
     )
 }
