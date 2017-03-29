@@ -1,0 +1,7 @@
+apply from: "$rootDir/gradle/build.java.gradle"
+
+dependencies {
+    compile (
+            'org.springframework.boot:spring-boot-starter-web',
+    )
+}

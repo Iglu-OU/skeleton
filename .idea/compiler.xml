@@ -7,6 +7,11 @@
     <bytecodeTargetLevel>
       <module name="modular-monolith-sample_main" target="1.8" />
       <module name="modular-monolith-sample_test" target="1.8" />
+      <module name="sample-module_main" target="1.8" />
+      <module name="sample-module_test" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
   </component>
 </project>

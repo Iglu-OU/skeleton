@@ -1,0 +1,9 @@
+apply from: "$rootDir/gradle/build.dependencyManagement.gradle"
+apply plugin: "java"
+
+sourceCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+	options.compilerArgs << '-parameters'
+	options.encoding = 'UTF-8'
+}

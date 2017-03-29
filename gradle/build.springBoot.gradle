@@ -1,0 +1,8 @@
+apply from: "$rootDir/gradle/build.java.gradle"
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile(
+            'org.springframework.boot:spring-boot-starter',
+    )
+}
