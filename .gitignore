@@ -1,2 +1,10 @@
 /.gradle/
 build/
+
+/.idea/*
+!/.idea/codeStyleSettings.xml
+!/.idea/compiler.xml
+!/.idea/encodings.xml
+!/.idea/gradle.xml
+!/.idea/sqldialects.xml
+!/.idea/vcs.xml
