@@ -1,3 +1,30 @@
 task wrapper(type: Wrapper) {
     gradleVersion = '3.4.1'
 }
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+        dependencyManagementVersion = '1.0.0.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath(
+                "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}",
+                "io.spring.gradle:dependency-management-plugin:${dependencyManagementVersion}",
+        )
+    }
+}
+
+apply from: "gradle/build.dependencyManagement.gradle"
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile(
+            'org.springframework.boot:spring-boot-starter'
+    )
+}
