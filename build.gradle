@@ -19,11 +19,3 @@ buildscript {
         )
     }
 }
-
-apply from: "gradle/build.springBoot.gradle"
-
-dependencies {
-    runtime(
-            project(':modules:web-module'),
-    )
-}

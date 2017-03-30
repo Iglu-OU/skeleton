@@ -1,0 +1,7 @@
+apply from: "$rootDir/gradle/build.springBoot.gradle"
+
+dependencies {
+    runtime(
+            project(':modules:web-module'),
+    )
+}
