@@ -8,7 +8,7 @@
     </extension>
     <option name="SPRING_BOOT_MAIN_CLASS" value="ee.iglu.sample.Main" />
     <option name="ALTERNATIVE_JRE_PATH" />
-    <module name="modular-monolith-sample_main" />
+    <module name="app_main" />
     <envs />
     <method />
   </configuration>

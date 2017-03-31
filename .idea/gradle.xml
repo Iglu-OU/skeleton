@@ -11,9 +11,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/modules" />
-            <option value="$PROJECT_DIR$/modules/greeter-module" />
-            <option value="$PROJECT_DIR$/modules/main" />
-            <option value="$PROJECT_DIR$/modules/web-module" />
+            <option value="$PROJECT_DIR$/modules/app" />
+            <option value="$PROJECT_DIR$/modules/app-web" />
+            <option value="$PROJECT_DIR$/modules/lib-greeter" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />

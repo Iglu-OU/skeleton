@@ -1,5 +1,5 @@
 rootProject.name = 'modular-monolith-sample'
 
 new File(rootDir, 'modules').eachDir {
-    include "modules:" + it.name
+    include "modules:${it.name}"
 }
