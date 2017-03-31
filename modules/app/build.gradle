@@ -1,4 +1,4 @@
-apply from: "$rootDir/gradle/build.springBoot.gradle"
+apply from: "$rootDir/gradle/spring-boot.gradle"
 
 dependencies {
     runtime(

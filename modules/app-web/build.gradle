@@ -1,4 +1,4 @@
-apply from: "$rootDir/gradle/build.java.gradle"
+apply from: "$rootDir/gradle/java.gradle"
 
 dependencies {
     compile (

@@ -1,4 +1,4 @@
-apply from: "$rootDir/gradle/build.javaLibrary.gradle"
+apply from: "$rootDir/gradle/java-library.gradle"
 
 dependencies {
     implementation(

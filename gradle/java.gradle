@@ -1,4 +1,4 @@
-apply from: "$rootDir/gradle/build.dependencyManagement.gradle"
+apply from: "$rootDir/gradle/dependency-management.gradle"
 apply plugin: "java"
 
 sourceCompatibility = 1.8
