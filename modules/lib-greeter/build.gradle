@@ -5,4 +5,7 @@ dependencies {
             'org.springframework:spring-context',
             'com.mitchellbosecke:pebble',
     )
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testRuntime 'org.springframework.boot:spring-boot-starter-logging'
 }
