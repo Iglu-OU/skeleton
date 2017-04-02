@@ -1,23 +1,23 @@
 apply plugin: "io.spring.dependency-management"
 
 repositories {
-	mavenCentral()
-	jcenter()
-	maven {
-		// for github dependencies
-		url "https://jitpack.io"
-	}
+    mavenCentral()
+    jcenter()
+    maven {
+        // for github dependencies
+        url "https://jitpack.io"
+    }
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
-	}
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+    }
 
-	dependencies {
-		dependency 'org.projectlombok:lombok:1.16.14'
-		dependency 'com.google.guava:guava:21.0'
-		dependency 'org.apache.commons:commons-lang3:3.5'
-		dependency 'com.mitchellbosecke:pebble:2.3.0'
-	}
+    dependencies {
+        dependency 'org.projectlombok:lombok:1.16.14'
+        dependency 'com.google.guava:guava:21.0'
+        dependency 'org.apache.commons:commons-lang3:3.5'
+        dependency 'com.mitchellbosecke:pebble:2.3.0'
+    }
 }
