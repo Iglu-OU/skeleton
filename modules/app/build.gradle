@@ -3,5 +3,6 @@ apply from: "$rootDir/gradle/spring-boot.gradle"
 dependencies {
     runtime(
             project(':modules:app-web'),
+            project(':modules:app-autoui'),
     )
 }
