@@ -4,7 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(
-		scanBasePackages = { "ee.iglu.autoui" }
+		scanBasePackages = {
+				"ee.iglu.autoui",
+				"ee.iglu.sample",
+				"ee.iglu.framework",
+		}
 )
 public class Application {
 	public static void main(String[] args) {

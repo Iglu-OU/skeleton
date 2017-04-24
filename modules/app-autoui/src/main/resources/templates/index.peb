@@ -1,2 +1,53 @@
-hello as
-{{ test }}
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto-UI</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<ul>
+    {% for method in methods %}
+
+
+        <li>
+            {% if method == activeMethod %}
+                <strong>{{ method }}</strong>
+            {% else %}
+                <a href="?method={{ method }}">{{ method }}</a>
+            {% endif %}
+        </li>
+
+    {% endfor %}
+</ul>
+
+
+{% if activeMethod is not null %}
+    <form id="request-form" action="/api/rpc/{{ activeMethod }}">
+        <h2>{{ activeMethod }}</h2>
+        <p>
+            <label>
+                <strong>name: (string)</strong>
+                <br/>
+                <input type="text" name="name"/>
+            </label>
+        </p>
+
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+
+    <textarea readonly disabled id="response">
+
+    </textarea>
+{% endif %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>

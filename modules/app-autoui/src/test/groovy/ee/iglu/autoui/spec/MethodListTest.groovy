@@ -12,7 +12,7 @@ class MethodListTest extends Specification {
 	MethodList methodList
 
 	def "test getMethods"() {
-		def methods = methodList.methods
+		def methods = methodList.methodNames
 		expect:
 		methods != null
 	}

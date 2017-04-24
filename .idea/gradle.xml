@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/modules/app" />
             <option value="$PROJECT_DIR$/modules/app-autoui" />
             <option value="$PROJECT_DIR$/modules/app-rpc" />
+            <option value="$PROJECT_DIR$/modules/app-sample" />
             <option value="$PROJECT_DIR$/modules/app-web" />
             <option value="$PROJECT_DIR$/modules/lib-greeter" />
             <option value="$PROJECT_DIR$/modules/lib-rpc" />
