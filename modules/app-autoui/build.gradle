@@ -1,0 +1,13 @@
+apply from: "$rootDir/gradle/java-library.gradle"
+apply plugin: 'groovy'
+
+dependencies {
+	compile(
+			project(":modules:lib-rpc"),
+	)
+
+	testCompile 'org.spockframework:spock-spring'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+	testCompile project(":modules:app-rpc")
+	testRuntime 'org.springframework.boot:spring-boot-starter-logging'
+}
