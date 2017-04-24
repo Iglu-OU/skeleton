@@ -1,27 +1,23 @@
 package ee.iglu.framework.rpc.impl;
 
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
-import org.springframework.beans.factory.BeanNotOfRequiredTypeException;
-import org.springframework.beans.factory.NoSuchBeanDefinitionException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.core.ResolvableType;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import ee.iglu.framework.rpc.RpcMethod;
+import ee.iglu.framework.rpc.RpcUtil;
 import ee.iglu.framework.rpc.exceptions.Problem;
 import ee.iglu.framework.rpc.exceptions.ProblemException;
 import ee.iglu.framework.rpc.exceptions.Problems;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.BeanNotOfRequiredTypeException;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+import java.util.Set;
 
 @Slf4j
 @Component
@@ -55,7 +51,7 @@ class RpcExecutor {
 
 	private RpcResult execute(RpcMethod method, byte[] requestBytes) {
 		try {
-			Class requestClass = requestClass(method.getClass());
+			Class requestClass = RpcUtil.requestClass(method.getClass());
 			Object request = mapper.readValue(requestBytes, requestClass);
 			validate(request);
 			Object response = transactor.execute(method, request);
@@ -86,17 +82,4 @@ class RpcExecutor {
 		}
 	}
 
-	public static <RQ, RS, T extends RpcMethod<RQ, RS>>  Class<RQ> requestClass(Class<T> methodClass) {
-		ResolvableType resolvableType = ResolvableType.forClass(RpcMethod.class, methodClass);
-		@SuppressWarnings("unchecked")
-		Class<RQ> responseClass = (Class<RQ>) resolvableType.resolveGeneric(0);
-		return responseClass;
-	}
-
-	public static <RQ, RS, T extends RpcMethod<RQ, RS>>  Class<RS> responseClass(Class<T> methodClass) {
-		ResolvableType resolvableType = ResolvableType.forClass(RpcMethod.class, methodClass);
-		@SuppressWarnings("unchecked")
-		Class<RS> responseClass = (Class<RS>) resolvableType.resolveGeneric(1);
-		return responseClass;
-	}
 }

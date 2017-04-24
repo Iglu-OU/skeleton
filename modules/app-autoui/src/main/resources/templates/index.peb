@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Auto-UI</title>
     <link rel="stylesheet" href="/style.css">
@@ -28,13 +29,16 @@
 {% if activeMethod is not null %}
     <form id="request-form" action="/api/rpc/{{ activeMethod }}">
         <h2>{{ activeMethod }}</h2>
-        <p>
-            <label>
-                <strong>name: (string)</strong>
-                <br/>
-                <input type="text" name="name"/>
-            </label>
-        </p>
+
+        {% for f in fields %}
+            <p>
+                <label>
+                    <strong>{{ f.name }}: ({{ f.type }})</strong>
+                    <br/>
+                    {% include "views/" + f.view %}
+                </label>
+            </p>
+        {% endfor %}
 
         <p>
             <button type="submit">Submit</button>
