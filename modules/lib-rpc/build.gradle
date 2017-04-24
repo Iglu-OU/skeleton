@@ -1,0 +1,17 @@
+apply from: "$rootDir/gradle/java-library.gradle"
+
+dependencies {
+    compileOnly(
+            'org.jetbrains:annotations'
+    )
+
+    compile(
+            'com.google.guava:guava',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework:spring-tx',
+    )
+
+    testCompile(
+            'org.apache.httpcomponents:httpclient',
+    )
+}
