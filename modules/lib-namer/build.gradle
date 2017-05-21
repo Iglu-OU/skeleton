@@ -1,13 +1,11 @@
 apply from: "$rootDir/gradle/java-library.gradle"
-apply plugin: 'groovy'
 
 dependencies {
     implementation(
-            'org.springframework:spring-context',
-            'com.mitchellbosecke:pebble',
+            'net.bytebuddy:byte-buddy',
+            'com.google.guava:guava',
     )
 
-    testCompile 'org.spockframework:spock-spring'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testRuntime 'org.springframework.boot:spring-boot-starter-logging'
 }
