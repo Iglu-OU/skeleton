@@ -1,4 +1,26 @@
+div {
+    border: 1px solid black;
+}
+
+body {
+    font-size: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 #response {
     width: 400px;
     height: 400px;
+}
+
+.container {
+    display: flex;
+}
+
+.side {
+    flex: 0 0 300px;
+}
+
+.main {
+    flex-basis: 100%;
 }

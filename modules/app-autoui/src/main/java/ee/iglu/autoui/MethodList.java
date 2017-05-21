@@ -1,6 +1,5 @@
 package ee.iglu.autoui;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.CaseFormat;
 import ee.iglu.framework.rpc.RpcMethod;
 import ee.iglu.framework.rpc.RpcUtil;
@@ -20,14 +19,15 @@ import static java.util.stream.Collectors.toList;
 public class MethodList {
 
     private final ApplicationContext context;
-    private final ObjectMapper objectMapper;
 
     public String[] getMethodNames() {
-        return context.getBeanNamesForType(RpcMethod.class);
+        String[] names = context.getBeanNamesForType(RpcMethod.class);
+        Arrays.sort(names);
+        return names;
     }
 
     public List<FieldDesc> methodDescription(String methodName) {
-        RpcMethod method = context.getBean(methodName, RpcMethod.class);
+        RpcMethod<?, ?> method = context.getBean(methodName, RpcMethod.class);
         Class requestClass = RpcUtil.requestClass(method.getClass());
 
         return Arrays.stream(BeanUtils.getPropertyDescriptors(requestClass))

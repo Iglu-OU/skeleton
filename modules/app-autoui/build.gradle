@@ -3,7 +3,7 @@ apply plugin: 'groovy'
 
 dependencies {
 	compile(
-			project(":modules:lib-rpc"),
+			project(":modules:app-rpc"),
 			'com.mitchellbosecke:pebble-spring-boot-starter',
 	)
 

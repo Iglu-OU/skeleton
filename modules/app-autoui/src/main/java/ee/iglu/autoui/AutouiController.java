@@ -16,11 +16,9 @@ class AutouiController {
 
     @RequestMapping("/")
     String home(@RequestParam(required = false) String method, Model model) {
-        model.addAttribute("test", "value");
         model.addAttribute("methods", methodList.getMethodNames());
         model.addAttribute("activeMethod", method);
         model.addAttribute("fields", methodList.methodDescription(method));
-
 
         return "index";
     }

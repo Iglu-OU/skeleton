@@ -4,15 +4,21 @@ jQuery(function ($) {
         e.preventDefault();
 
         var $this = $(this);
-        var data = JSON.stringify($this.serializeObject());
+        var data = JSON.stringify({
+            methodName: $this.data("method"),
+            requestObject: $this.serializeObject(),
+        });
 
         $.ajax({
             type: "POST",
             url: $this.attr('action'),
             data: data,
             contentType: 'application/json;charset=UTF-8',
-        }).then(function (rs) {
+        }).done(function (rs) {
             var response = JSON.stringify(rs, null, 2);
+            $("#response").val(response);
+        }).fail(function (arg) {
+            var response = JSON.stringify(arg.responseJSON, null, 2);
             $("#response").val(response);
         });
 
