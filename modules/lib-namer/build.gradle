@@ -1,0 +1,11 @@
+apply from: "$rootDir/gradle/java-library.gradle"
+
+dependencies {
+    implementation(
+            'net.bytebuddy:byte-buddy',
+            'com.google.guava:guava',
+    )
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testRuntime 'org.springframework.boot:spring-boot-starter-logging'
+}
