@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.9.2.xsd">
+
+    <generator>
+        <database>
+            <name>org.jooq.util.postgres.PostgresDatabase</name>
+            <inputSchema>public</inputSchema>
+            <excludes>schema_version</excludes>
+        </database>
+        <generate>
+            <pojos>true</pojos>
+            <daos>true</daos>
+            <javaTimeTypes>true</javaTimeTypes>
+        </generate>
+        <strategy>
+            <name>ee.iglu.tools.daogen.CustomGeneratorStrategy</name>
+        </strategy>
+    </generator>
+
+</configuration>

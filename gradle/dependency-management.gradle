@@ -19,5 +19,6 @@ dependencyManagement {
 		dependency 'com.google.guava:guava:21.0'
 		dependency 'org.apache.commons:commons-lang3:3.5'
 		dependency 'com.mitchellbosecke:pebble:2.3.0'
+		dependency 'ru.yandex.qatools.embed:postgresql-embedded:2.2'
 	}
 }
