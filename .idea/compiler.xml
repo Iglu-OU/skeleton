@@ -9,6 +9,8 @@
       <module name="app-web_test" target="1.8" />
       <module name="app_main" target="1.8" />
       <module name="app_test" target="1.8" />
+      <module name="daogen_main" target="1.8" />
+      <module name="daogen_test" target="1.8" />
       <module name="greeter-module_main" target="1.8" />
       <module name="greeter-module_test" target="1.8" />
       <module name="lib-greeter_main" target="1.8" />

@@ -22,5 +22,6 @@ dependencyManagement {
         dependency 'org.apache.commons:commons-lang3:3.5'
         dependency 'com.mitchellbosecke:pebble:2.3.0'
         dependency 'net.bytebuddy:byte-buddy:1.7.0'
-    }
+        dependency 'ru.yandex.qatools.embed:postgresql-embedded:2.2'
+	}
 }
