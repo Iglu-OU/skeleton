@@ -1,0 +1,10 @@
+apply from: "$rootDir/gradle/java.gradle"
+
+dependencies {
+    compile 'org.flywaydb:flyway-core'
+    compile 'org.jooq:jooq-codegen'
+    compile 'ru.yandex.qatools.embed:postgresql-embedded'
+
+    runtime 'org.postgresql:postgresql'
+    runtime 'org.springframework.boot:spring-boot-starter-logging'
+}
