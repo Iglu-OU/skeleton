@@ -1,0 +1,8 @@
+apply from: "$rootDir/gradle/java.gradle"
+
+dependencies {
+    compile (
+            'org.springframework.boot:spring-boot-starter-web',
+            project(':modules:lib-sample-greeter'),
+    )
+}

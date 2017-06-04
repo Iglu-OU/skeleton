@@ -1,0 +1,15 @@
+apply from: "$rootDir/gradle/java-library.gradle"
+apply plugin: 'groovy'
+
+dependencies {
+    implementation(
+            'org.springframework:spring-context',
+            'com.mitchellbosecke:pebble',
+    )
+
+    testCompile 'org.spockframework:spock-spring'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+    testRuntime 'org.springframework.boot:spring-boot-starter-logging'
+    testRuntime project(':modules:config')
+}
