@@ -1,13 +1,13 @@
-package com.example.todo;
+package com.example.todo.dao;
 
-import com.example.todo.dao.tables.daos.TodoListDao;
+import com.example.todo.dao.generated.tables.daos.TodoListDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @RequiredArgsConstructor
-class TodoConfig {
+class TodoDaoConfig {
 
     private final org.jooq.Configuration configuration;
 

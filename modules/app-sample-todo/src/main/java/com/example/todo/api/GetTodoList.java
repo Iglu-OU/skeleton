@@ -1,7 +1,7 @@
 package com.example.todo.api;
 
-import com.example.todo.dao.tables.daos.TodoListDao;
-import com.example.todo.dao.tables.pojos.TodoListRow;
+import com.example.todo.dao.generated.tables.daos.TodoListDao;
+import com.example.todo.dao.generated.tables.pojos.TodoListRow;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

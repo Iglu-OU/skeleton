@@ -1,5 +1,5 @@
 ext {
-    daogenPackageName = "ee.iglu.apps.sample.todo.dao"
+    daogenPackageName = "com.example.todo.dao.generated"
 }
 
 apply from: "$rootDir/gradle/java.gradle"
