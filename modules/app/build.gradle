@@ -1,7 +1,11 @@
 apply from: "$rootDir/gradle/spring-boot.gradle"
 
 dependencies {
-    runtime(
-            project(':modules:app-web'),
-    )
+    compile project(":modules:config")
+
+    new File(rootDir, 'modules').eachDir {
+        if (it.name.startsWith("app-")) {
+            runtime project(":modules:${it.name}")
+        }
+    }
 }
