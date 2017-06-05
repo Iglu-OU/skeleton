@@ -32,7 +32,7 @@ class EmbeddedPostgresBean {
         url = postgres.start(
                 cachedRuntimeConfig(Paths.get("build", "tmp")),
                 "localhost",
-                9876,
+                5432,
                 "sample_devel",
                 "sample_devel",
                 "sample_devel",

@@ -8,6 +8,7 @@ apply plugin: 'groovy'
 
 dependencies {
     compile 'org.springframework:spring-context'
+    compile project(':modules:app-rpc')
 
     runtime project(':modules:config')
 

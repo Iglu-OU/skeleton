@@ -1,0 +1,3 @@
+  {{methodName}}(): Observable<{{responseClass}}> {
+    return this.api.execute("{{url}}", {});
+  }

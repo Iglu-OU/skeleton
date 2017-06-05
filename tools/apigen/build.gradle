@@ -1,0 +1,26 @@
+apply from: "$rootDir/gradle/java.gradle"
+
+repositories {
+    maven {
+        // for github dependencies
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    compile(
+            project(':modules:lib-rpc'),
+            'com.google.guava:guava',
+            'org.apache.commons:commons-lang3',
+            'com.github.raphaeljolivet.java2typescript:java2typescript-jackson:531a24e',
+            'org.reflections:reflections:0.9.10',
+            'com.mitchellbosecke:pebble:2.1.0',
+            'com.fasterxml.jackson.core:jackson-databind:2.6.4',
+            'com.fasterxml.jackson.core:jackson-core:2.6.4',
+            'com.fasterxml.jackson.core:jackson-annotations:2.6.4',
+
+            'org.springframework.boot:spring-boot-starter-logging',
+    )
+
+    runtime project(":modules:app")
+}
