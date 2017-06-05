@@ -1,4 +1,4 @@
-package ee.iglu.framework.rpc;
+package ee.iglu.skeleton.rpc;
 
 public interface RpcMethod<RQ, RS> {
 

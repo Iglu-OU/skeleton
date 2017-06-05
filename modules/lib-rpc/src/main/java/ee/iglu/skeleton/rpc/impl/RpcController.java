@@ -1,4 +1,4 @@
-package ee.iglu.framework.rpc.impl;
+package ee.iglu.skeleton.rpc.impl;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.ByteStreams;
-import ee.iglu.framework.rpc.exceptions.Problem;
-import ee.iglu.framework.rpc.exceptions.Problems;
+import ee.iglu.skeleton.rpc.exceptions.Problem;
+import ee.iglu.skeleton.rpc.exceptions.Problems;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;

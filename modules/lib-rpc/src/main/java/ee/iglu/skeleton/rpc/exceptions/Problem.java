@@ -1,9 +1,9 @@
-package ee.iglu.framework.rpc.exceptions;
-
-import java.util.List;
+package ee.iglu.skeleton.rpc.exceptions;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
 
 @Getter
 @RequiredArgsConstructor

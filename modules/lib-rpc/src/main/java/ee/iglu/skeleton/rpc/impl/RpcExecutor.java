@@ -1,10 +1,14 @@
-package ee.iglu.framework.rpc.impl;
+package ee.iglu.skeleton.rpc.impl;
 
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
+import ee.iglu.skeleton.rpc.RpcMethod;
+import ee.iglu.skeleton.rpc.exceptions.Problem;
+import ee.iglu.skeleton.rpc.exceptions.ProblemException;
+import ee.iglu.skeleton.rpc.exceptions.Problems;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,11 +21,6 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import ee.iglu.framework.rpc.RpcMethod;
-import ee.iglu.framework.rpc.exceptions.Problem;
-import ee.iglu.framework.rpc.exceptions.ProblemException;
-import ee.iglu.framework.rpc.exceptions.Problems;
 
 @Slf4j
 @Component

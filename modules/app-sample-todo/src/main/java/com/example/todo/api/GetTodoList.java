@@ -1,23 +1,17 @@
 package com.example.todo.api;
 
+import com.example.BaseMethod;
+import com.example.PrototypeComponent;
 import com.example.todo.dao.generated.tables.daos.TodoListDao;
 import com.example.todo.dao.generated.tables.pojos.TodoListRow;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@PrototypeComponent
 @RequiredArgsConstructor
-public class GetTodoList {
-
-    private final TodoListDao todoListDao;
-
-    public Response execute(Request request) {
-        List<TodoListRow> all = todoListDao.findAll();
-        return new Response(all);
-    }
+public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Response> {
 
     @Getter
     @RequiredArgsConstructor
@@ -29,4 +23,12 @@ public class GetTodoList {
     @RequiredArgsConstructor
     public static class Request {
     }
+
+    private final TodoListDao todoListDao;
+
+    public Response execute() {
+        List<TodoListRow> all = todoListDao.findAll();
+        return new Response(all);
+    }
+
 }

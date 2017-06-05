@@ -1,6 +1,6 @@
-package ee.iglu.framework.rpc.exceptions;
+package ee.iglu.skeleton.rpc.exceptions;
 
-import static ee.iglu.framework.rpc.exceptions.ProblemCode.*;
+import static ee.iglu.skeleton.rpc.exceptions.ProblemCode.*;
 
 import java.util.List;
 import java.util.Set;

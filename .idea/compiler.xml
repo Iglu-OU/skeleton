@@ -5,10 +5,16 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="app-autoui_main" target="1.8" />
+      <module name="app-autoui_test" target="1.8" />
+      <module name="app-rpc_main" target="1.8" />
+      <module name="app-rpc_test" target="1.8" />
       <module name="app-sample-greeter_main" target="1.8" />
       <module name="app-sample-greeter_test" target="1.8" />
       <module name="app-sample-todo_main" target="1.8" />
       <module name="app-sample-todo_test" target="1.8" />
+      <module name="app-sample_main" target="1.8" />
+      <module name="app-sample_test" target="1.8" />
       <module name="app-web_main" target="1.8" />
       <module name="app-web_test" target="1.8" />
       <module name="app_main" target="1.8" />
@@ -19,12 +25,16 @@
       <module name="daogen_test" target="1.8" />
       <module name="greeter-module_main" target="1.8" />
       <module name="greeter-module_test" target="1.8" />
+      <module name="lib-autoui_main" target="1.8" />
+      <module name="lib-autoui_test" target="1.8" />
       <module name="lib-dao_main" target="1.8" />
       <module name="lib-dao_test" target="1.8" />
       <module name="lib-greeter_main" target="1.8" />
       <module name="lib-greeter_test" target="1.8" />
       <module name="lib-namer_main" target="1.8" />
       <module name="lib-namer_test" target="1.8" />
+      <module name="lib-rpc_main" target="1.8" />
+      <module name="lib-rpc_test" target="1.8" />
       <module name="lib-sample-greeter_main" target="1.8" />
       <module name="lib-sample-greeter_test" target="1.8" />
       <module name="lib-user_main" target="1.8" />

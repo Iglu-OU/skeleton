@@ -1,4 +1,4 @@
-package ee.iglu.framework.rpc.impl;
+package ee.iglu.skeleton.rpc.impl;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,11 +1,11 @@
-package ee.iglu.framework.rpc.impl;
+package ee.iglu.skeleton.rpc.impl;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
-import ee.iglu.framework.rpc.exceptions.Problem;
+import ee.iglu.skeleton.rpc.exceptions.Problem;
 
 @Getter
 @ToString

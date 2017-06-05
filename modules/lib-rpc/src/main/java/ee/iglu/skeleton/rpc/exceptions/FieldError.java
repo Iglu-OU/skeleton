@@ -1,4 +1,4 @@
-package ee.iglu.framework.rpc.exceptions;
+package ee.iglu.skeleton.rpc.exceptions;
 
 import java.util.List;
 
