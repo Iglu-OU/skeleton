@@ -1,8 +1,4 @@
-package ee.iglu.framework.apigen;
-
-import java.io.IOException;
-import java.io.Writer;
-import java.util.List;
+package ee.iglu.skeleton.tools.apigen;
 
 import java2typescript.jackson.module.grammar.EnumType;
 import java2typescript.jackson.module.grammar.base.AbstractNamedType;
@@ -10,11 +6,15 @@ import java2typescript.jackson.module.writer.CustomAbstractTypeWriter;
 import java2typescript.jackson.module.writer.SortUtil;
 import java2typescript.jackson.module.writer.WriterPreferences;
 
+import java.io.IOException;
+import java.io.Writer;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
- * Temporary workaround for enums that contain value "name".
- * Needs to be merged into java2typescript-jackson
+ * write enums as string literal union type aliases and a namespace with constants
  */
-class PatchedEnumPatternWriter implements CustomAbstractTypeWriter {
+class TypeAliasEnumWriter implements CustomAbstractTypeWriter {
 
 	@Override
 	public boolean accepts(AbstractNamedType type, WriterPreferences preferences) {
@@ -25,18 +25,26 @@ class PatchedEnumPatternWriter implements CustomAbstractTypeWriter {
 	public void writeDef(AbstractNamedType type, Writer writer, WriterPreferences preferences) throws IOException {
 		EnumType enumType = (EnumType) type;
 		String enumTypeName = enumType.getName();
-		writer.write(String.format("class %s extends EnumPatternBase {\n", enumTypeName));
-		preferences.increaseIndentation();
+
+
+
 		List<String> enumConstants = enumType.getValues();
 		if (preferences.isSort()) {
 			enumConstants = SortUtil.sort(enumConstants);
 		}
+
+		String values = enumConstants.stream()
+				.map(s -> "\"" + s + "\"")
+				.collect(Collectors.joining(" | "));
+		writer.write(String.format("type %s = %s;\n", enumTypeName, values));
+
+		writer.write(String.format("export namespace %sValues {\n", enumTypeName));
+		preferences.increaseIndentation();
 		for (String value : enumConstants) {
-			String format = preferences.getIndentation() + "static %s = new %s('%s');\n";
+			String format = preferences.getIndentation() + "export const %s: %s = '%s';\n";
 			String line = String.format(format, formatPropertyName(value), enumTypeName, value);
 			writer.write(line);
 		}
-		writer.write(preferences.getIndentation() + "constructor(name:string){super(name);}\n");
 		preferences.decreaseIndention();
 		writer.write(preferences.getIndentation() + "}");
 	}

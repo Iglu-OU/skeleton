@@ -1,4 +1,4 @@
-package ee.iglu.framework.apigen;
+package ee.iglu.skeleton.tools.apigen;
 
 import ee.iglu.skeleton.rpc.RpcMethod;
 import java2typescript.jackson.module.conf.typename.WithEnclosingClassTSTypeNamingStrategy;

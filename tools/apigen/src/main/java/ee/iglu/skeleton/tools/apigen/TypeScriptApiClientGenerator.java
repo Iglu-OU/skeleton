@@ -1,4 +1,4 @@
-package ee.iglu.framework.apigen;
+package ee.iglu.skeleton.tools.apigen;
 
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.google.common.base.CaseFormat;
@@ -8,8 +8,6 @@ import com.google.common.io.Files;
 import com.mitchellbosecke.pebble.PebbleEngine;
 import com.mitchellbosecke.pebble.error.PebbleException;
 import com.mitchellbosecke.pebble.template.PebbleTemplate;
-import ee.iglu.framework.apigen.TypeScriptGenerator.ApiMethodHelper;
-import ee.iglu.framework.apigen.TypeScriptGenerator.ApiMethodHelper.RequestAndResponseClassHolder;
 import ee.iglu.skeleton.rpc.RpcMethod;
 
 import java.beans.IntrospectionException;
@@ -32,7 +30,7 @@ class TypeScriptApiClientGenerator {
 			File outFile,
 			ApiMethodTSTypeNamingStrategy namingStrategy,
 			Collection<Class<A>> apiMethods,
-			ApiMethodHelper helper) {
+			TypeScriptGenerator.ApiMethodHelper helper) {
 		StringBuilder importsFromGeneratedTypesSB = new StringBuilder();
 		StringBuilder operationsSB = new StringBuilder();
 		StringBuilder operationFieldsSB = new StringBuilder();
@@ -69,7 +67,7 @@ class TypeScriptApiClientGenerator {
 			Package apiMethodPackage,
 			List<Class<A>> apiMethodsInPackage,
 			ApiMethodTSTypeNamingStrategy namingStrategy,
-			ApiMethodHelper helper,
+			TypeScriptGenerator.ApiMethodHelper helper,
 			StringBuilder importsFromGeneratedTypesSB,
 			StringBuilder operationFieldsSB,
 			StringBuilder operationFieldsInitializationSB) {
@@ -77,7 +75,7 @@ class TypeScriptApiClientGenerator {
 		String deepestPackageName = namingStrategy.getPackageNameForPrefix(apiMethodPackage);
 		String operationsClassName = CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, deepestPackageName) + "Operations";
 		for (Class<A> apiMethodClass : apiMethodsInPackage) {
-			RequestAndResponseClassHolder requestsAndResponse = helper.getRequestAndResponse(apiMethodClass);
+			TypeScriptGenerator.ApiMethodHelper.RequestAndResponseClassHolder requestsAndResponse = helper.getRequestAndResponse(apiMethodClass);
 			Preconditions
 					.checkState(requestsAndResponse.getAll().size() == 2, "Expected request and response class, got %s from %s",
 							requestsAndResponse, apiMethodClass);

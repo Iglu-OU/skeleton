@@ -24,9 +24,3 @@ dependencies {
 
     runtime project(":modules:app")
 }
-
-task generateApi(type: JavaExec) {
-    classpath = sourceSets.main.runtimeClasspath
-    main = "ee.iglu.framework.apigen.TypeScriptGenerator"
-    args = ["$rootProject.projectDir"]
-}

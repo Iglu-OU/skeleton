@@ -1,4 +1,4 @@
-package ee.iglu.framework.apigen;
+package ee.iglu.skeleton.tools.apigen;
 
 import java.io.BufferedWriter;
 import java.io.File;
