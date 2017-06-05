@@ -23,5 +23,6 @@ dependencyManagement {
         dependency 'com.mitchellbosecke:pebble:2.3.0'
         dependency 'net.bytebuddy:byte-buddy:1.7.0'
         dependency 'ru.yandex.qatools.embed:postgresql-embedded:2.2'
+        dependency 'org.flywaydb:flyway-core:4.2.0'
 	}
 }

@@ -1,0 +1,11 @@
+dependencies {
+    compile project(':modules:lib-dao')
+}
+
+evaluationDependsOn(':tools:daogen')
+
+task generateDao(type: JavaExec) {
+    classpath = project(':tools:daogen').sourceSets.main.runtimeClasspath + sourceSets.main.resources.sourceDirectories
+    main = "ee.iglu.tools.daogen.Daogen"
+    args = ["${sourceSets.main.java.srcDirs[0]}", daogenPackageName, "build/tmp"]
+}

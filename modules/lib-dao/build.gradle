@@ -1,0 +1,18 @@
+apply from: "$rootDir/gradle/java-library.gradle"
+
+dependencies {
+    compile 'org.jooq:jooq'
+    runtime 'org.springframework.boot:spring-boot-starter-jooq'
+
+    implementation(
+            'org.springframework:spring-context',
+            'org.springframework.boot:spring-boot-autoconfigure',
+            'ru.yandex.qatools.embed:postgresql-embedded'
+    )
+
+    implementation 'org.flywaydb:flyway-core'
+    runtime 'org.postgresql:postgresql'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testRuntime 'org.springframework.boot:spring-boot-starter-logging'
+}
