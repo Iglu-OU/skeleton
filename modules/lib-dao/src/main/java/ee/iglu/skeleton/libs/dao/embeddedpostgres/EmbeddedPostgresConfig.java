@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Primary;
 
 @Configuration
 @ConditionalOnProperty("lib.dao.enable-embedded-postgres")
-public class EmbeddedPostgresConfig {
+class EmbeddedPostgresConfig {
 
     @Bean
     EmbeddedPostgresBean embeddedPostgresInitializer() {
