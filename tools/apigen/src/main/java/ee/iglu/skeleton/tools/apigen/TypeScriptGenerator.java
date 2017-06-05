@@ -2,6 +2,7 @@ package ee.iglu.skeleton.tools.apigen;
 
 import ee.iglu.skeleton.rpc.RpcMethod;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.reflections.Reflections;
@@ -14,22 +15,23 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
+@RequiredArgsConstructor
 public class TypeScriptGenerator {
 	private final ApiMethodHelper helper = new ApiMethodHelper();
 	private final ApiMethodTSTypeNamingStrategy namingStrategy = new ApiMethodTSTypeNamingStrategy();
 
+	private final String basePackageName;
+
 	public static void main(String[] args) throws IOException {
-		// allow starting from
-		// * command line(working dir would be front project) and
-		// * from IDE (working dir is generator project)
-		String apiDir = args.length > 0 ? args[0] : "../../front/app/api";
+		String apiDir = args[0];
+		String basePackageName = args[1];
 
 		File frontEndProjectSrcDir = new File(apiDir);
 		frontEndProjectSrcDir.mkdirs();
 		File generatedTypesOutFile = new File(frontEndProjectSrcDir, "api-types.ts");
 		File generatedApiClientOutFile = new File(frontEndProjectSrcDir, "api.service.ts");
 
-		new TypeScriptGenerator().generate(generatedTypesOutFile, generatedApiClientOutFile);
+		new TypeScriptGenerator(basePackageName).generate(generatedTypesOutFile, generatedApiClientOutFile);
 	}
 
 	private <A extends RpcMethod<?, ?>> void generate(File generatedTypesOutFile, File generatedApiClientOutFile) throws
@@ -70,8 +72,7 @@ public class TypeScriptGenerator {
 
 	@SuppressWarnings("unchecked")
 	private Collection<Class<? extends RpcMethod<?, ?>>> getApiMethods() {
-		String packageName = "com.vitarise";
-		Reflections r = new Reflections(packageName);
+	Reflections r = new Reflections(basePackageName);
 
 		@SuppressWarnings("rawtypes")
 		Set st = r.getSubTypesOf(RpcMethod.class);
