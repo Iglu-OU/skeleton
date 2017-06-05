@@ -22,9 +22,10 @@ public class TypeScriptGenerator {
 		// allow starting from
 		// * command line(working dir would be front project) and
 		// * from IDE (working dir is generator project)
-		String projectRootDir = args.length > 0 ? args[0] : "../../";
+		String apiDir = args.length > 0 ? args[0] : "../../front/app/api";
 
-		File frontEndProjectSrcDir = new File(projectRootDir + "/front/app/api");
+		File frontEndProjectSrcDir = new File(apiDir);
+		frontEndProjectSrcDir.mkdirs();
 		File generatedTypesOutFile = new File(frontEndProjectSrcDir, "api-types.ts");
 		File generatedApiClientOutFile = new File(frontEndProjectSrcDir, "api.service.ts");
 
