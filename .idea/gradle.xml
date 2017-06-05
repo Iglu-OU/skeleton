@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/modules/lib-rpc" />
             <option value="$PROJECT_DIR$/modules/lib-sample-greeter" />
             <option value="$PROJECT_DIR$/tools" />
+            <option value="$PROJECT_DIR$/tools/apigen" />
             <option value="$PROJECT_DIR$/tools/daogen" />
           </set>
         </option>

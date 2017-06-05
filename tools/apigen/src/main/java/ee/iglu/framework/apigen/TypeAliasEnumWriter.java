@@ -1,15 +1,15 @@
 package ee.iglu.framework.apigen;
 
-import java.io.IOException;
-import java.io.Writer;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import java2typescript.jackson.module.grammar.EnumType;
 import java2typescript.jackson.module.grammar.base.AbstractNamedType;
 import java2typescript.jackson.module.writer.CustomAbstractTypeWriter;
 import java2typescript.jackson.module.writer.SortUtil;
 import java2typescript.jackson.module.writer.WriterPreferences;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * write enums as string literal union type aliases and a namespace with constants

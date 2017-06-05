@@ -1,17 +1,17 @@
 package ee.iglu.framework.apigen;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Modifier;
-import java.util.*;
-import java.util.stream.Collectors;
-
-import ee.iglu.framework.rpc.RpcMethod;
+import ee.iglu.skeleton.rpc.RpcMethod;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.reflections.Reflections;
 import org.springframework.core.ResolvableType;
+
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Modifier;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class TypeScriptGenerator {

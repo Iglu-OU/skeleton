@@ -1,5 +1,17 @@
 package ee.iglu.framework.apigen;
 
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.google.common.base.CaseFormat;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Throwables;
+import com.google.common.io.Files;
+import com.mitchellbosecke.pebble.PebbleEngine;
+import com.mitchellbosecke.pebble.error.PebbleException;
+import com.mitchellbosecke.pebble.template.PebbleTemplate;
+import ee.iglu.framework.apigen.TypeScriptGenerator.ApiMethodHelper;
+import ee.iglu.framework.apigen.TypeScriptGenerator.ApiMethodHelper.RequestAndResponseClassHolder;
+import ee.iglu.skeleton.rpc.RpcMethod;
+
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.io.File;
@@ -12,18 +24,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import com.fasterxml.jackson.databind.type.TypeFactory;
-import com.google.common.base.CaseFormat;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Throwables;
-import com.google.common.io.Files;
-import com.mitchellbosecke.pebble.PebbleEngine;
-import com.mitchellbosecke.pebble.error.PebbleException;
-import com.mitchellbosecke.pebble.template.PebbleTemplate;
-import ee.iglu.framework.apigen.TypeScriptGenerator.ApiMethodHelper;
-import ee.iglu.framework.apigen.TypeScriptGenerator.ApiMethodHelper.RequestAndResponseClassHolder;
-import ee.iglu.framework.rpc.RpcMethod;
 
 class TypeScriptApiClientGenerator {
 	private final PebbleEngine engine = new PebbleEngine.Builder().autoEscaping(false).build();

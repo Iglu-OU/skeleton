@@ -1,10 +1,10 @@
 package ee.iglu.framework.apigen;
 
-import java.util.Arrays;
-
-import ee.iglu.framework.rpc.RpcMethod;
+import ee.iglu.skeleton.rpc.RpcMethod;
 import java2typescript.jackson.module.conf.typename.WithEnclosingClassTSTypeNamingStrategy;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
 
 class ApiMethodTSTypeNamingStrategy extends WithEnclosingClassTSTypeNamingStrategy {
 

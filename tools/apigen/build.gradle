@@ -1,5 +1,4 @@
-apply from: '../../gradle/build.java.gradle'
-apply from: '../../gradle/build.dependencyManagement.gradle'
+apply from: "$rootDir/gradle/java.gradle"
 
 repositories {
     maven {
@@ -10,9 +9,9 @@ repositories {
 
 dependencies {
     compile(
-            project(':back'),
-
+            project(':modules:lib-rpc'),
             'com.google.guava:guava',
+            'org.apache.commons:commons-lang3',
             'com.github.raphaeljolivet.java2typescript:java2typescript-jackson:531a24e',
             'org.reflections:reflections:0.9.10',
             'com.mitchellbosecke:pebble:2.1.0',
@@ -22,6 +21,8 @@ dependencies {
 
             'org.springframework.boot:spring-boot-starter-logging',
     )
+
+    runtime project(":modules:app")
 }
 
 task generateApi(type: JavaExec) {
