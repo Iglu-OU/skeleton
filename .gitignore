@@ -12,3 +12,6 @@ npm-debug.log
 !/.idea/runConfigurations/
 !/.idea/sqldialects.xml
 !/.idea/vcs.xml
+
+
+/modules/front-main/scripts/

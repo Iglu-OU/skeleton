@@ -7,5 +7,5 @@ evaluationDependsOn(':tools:apigen')
 task generateApi(type: JavaExec) {
     classpath = project(':tools:apigen').sourceSets.main.runtimeClasspath
     main = "ee.iglu.skeleton.tools.apigen.TypeScriptGenerator"
-    args = ["$projectDir/app/api", "com.example"]
+    args = ["$projectDir/src/api", "com.example"]
 }

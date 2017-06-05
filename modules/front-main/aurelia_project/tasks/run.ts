@@ -1,6 +1,7 @@
 import * as gulp from 'gulp';
 import * as browserSync from 'browser-sync';
 import * as historyApiFallback from 'connect-history-api-fallback/lib';
+import * as proxy from "http-proxy-middleware";
 import * as project from '../aurelia.json';
 import build from './build';
 import {CLIOptions} from 'aurelia-cli';
@@ -24,7 +25,12 @@ let serve = gulp.series(
       logLevel: 'silent',
       server: {
         baseDir: [project.platform.baseDir],
-        middleware: [historyApiFallback(), function(req, res, next) {
+        middleware: [
+          historyApiFallback(),
+          proxy("http://localhost:8080/api/", {
+            changeOrigin: true
+          }),
+          function(req, res, next) {
           res.setHeader('Access-Control-Allow-Origin', '*');
           next();
         }]

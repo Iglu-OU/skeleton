@@ -1,14 +1,13 @@
 // NB! this file should be generated using `gradlew generateApi`
 
-import {Injectable} from "@angular/core";
+import {autoinject} from "aurelia-framework";
 import {ApiClient} from "./api-client";
-import {Observable} from "rxjs";
 
 import {
 {{importsFromGeneratedTypes}}
 } from "./api-types";
 
-@Injectable()
+@autoinject
 export class ApiService {
 {{operationFields}}
 
