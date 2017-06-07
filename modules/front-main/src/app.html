@@ -1,5 +1,10 @@
 <template>
   <h1>${message}</h1>
 
+  <form submit.delegate="submit()">
+    <input type="text" value.bind="itemName"/>
+    <button type="submit">Submit</button>
+  </form>
+
   <p repeat.for="item of todoList.lists">${item.name}</p>
 </template>

@@ -4,6 +4,7 @@ import {autoinject} from "aurelia-framework";
 import {ApiClient} from "./api-client";
 
 import {
+  AddTodoItem$Request, AddTodoItem$Response,
   GetTodoList$Request, GetTodoList$Response,
 } from "./api-types";
 
@@ -20,6 +21,9 @@ export class ApiService {
 export class TodoOperations {
   constructor(private api: ApiClient) {}
 
+  addTodoItem(request: AddTodoItem$Request): Promise<AddTodoItem$Response> {
+    return this.api.execute("addTodoItem", request);
+  }
   getTodoList(): Promise<GetTodoList$Response> {
     return this.api.execute("getTodoList", {});
   }

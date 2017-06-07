@@ -3,18 +3,28 @@ import {ApiService} from "./api/api.service";
 
 @autoinject
 export class App {
-
-  todoListPromise;
   private todoList;
-
+  itemName;
 
   constructor(private api: ApiService) {
-    this.todoListPromise = api.todo.getTodoList();
   }
 
-  attached(){
-    this.todoListPromise.then(todoList => this.todoList = todoList)
+  attached() {
+    return this.reload();
+  }
+
+  private reload() {
+    return this.api.todo.getTodoList()
+      .then(todoList => this.todoList = todoList)
   }
 
   message = 'Hello World!';
+
+  submit() {
+    this.api.todo.addTodoItem({
+      name: this.itemName
+    }).then(response => {
+      this.reload();
+    });
+  }
 }

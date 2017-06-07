@@ -1,3 +1,10 @@
+export interface AddTodoItem$Request {
+    name: string;
+}
+
+export interface AddTodoItem$Response {
+}
+
 export interface GetTodoList$Request {
 }
 
