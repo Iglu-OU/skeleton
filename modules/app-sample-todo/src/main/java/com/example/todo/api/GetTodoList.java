@@ -2,12 +2,13 @@ package com.example.todo.api;
 
 import com.example.BaseMethod;
 import com.example.PrototypeComponent;
-import com.example.todo.dao.generated.tables.daos.TodoListDao;
-import com.example.todo.dao.generated.tables.pojos.TodoListRow;
+import com.example.todo.dao.generated.tables.daos.TodoItemDao;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
+
+import static java.util.stream.Collectors.toList;
 
 @PrototypeComponent
 @RequiredArgsConstructor
@@ -16,7 +17,15 @@ public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Res
     @Getter
     @RequiredArgsConstructor
     public static class Response {
-        private final List<TodoListRow> lists;
+        private final List<Item> items;
+
+        @Getter
+        @RequiredArgsConstructor
+        private static class Item {
+            private final Long id;
+            private final String name;
+            private final boolean checked;
+        }
     }
 
     @Getter
@@ -24,10 +33,15 @@ public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Res
     public static class Request {
     }
 
-    private final TodoListDao todoListDao;
+    private final TodoItemDao todoItemDao;
 
     public Response execute() {
-        List<TodoListRow> all = todoListDao.findAll();
+        List<Response.Item> all = todoItemDao.findAll().stream()
+                .map(row -> new Response.Item(row.getId(),
+                row.getName(),
+                row.getChecked()))
+                .collect(toList());
+
         return new Response(all);
     }
 

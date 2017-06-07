@@ -4,8 +4,8 @@ import com.example.BaseMethod;
 import com.example.PrototypeComponent;
 import com.example.todo.api.AddTodoItem.Request;
 import com.example.todo.api.AddTodoItem.Response;
-import com.example.todo.dao.generated.tables.daos.TodoListDao;
-import com.example.todo.dao.generated.tables.pojos.TodoListRow;
+import com.example.todo.dao.generated.tables.daos.TodoItemDao;
+import com.example.todo.dao.generated.tables.pojos.TodoItemRow;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AddTodoItem extends BaseMethod<Request, Response> {
 
-    private final TodoListDao todoListDao;
+    private final TodoItemDao todoItemDao;
     @Getter
     @AllArgsConstructor
     public static class Request {
@@ -27,7 +27,7 @@ public class AddTodoItem extends BaseMethod<Request, Response> {
     }
 
     public Response execute() {
-        todoListDao.insert(new TodoListRow(null, request.getName()));
+        todoItemDao.insert(new TodoItemRow(null, request.getName(), false, null));
         return new Response();
     }
 }

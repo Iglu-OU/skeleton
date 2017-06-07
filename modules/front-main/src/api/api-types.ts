@@ -5,15 +5,40 @@ export interface AddTodoItem$Request {
 export interface AddTodoItem$Response {
 }
 
+export interface CheckTodoItem$Request {
+}
+
+export interface CheckTodoItem$Response {
+}
+
+export interface ClearTodoList$Request {
+}
+
+export interface ClearTodoList$Response {
+}
+
+export interface DeleteTodoItem$Request {
+}
+
+export interface DeleteTodoItem$Response {
+}
+
 export interface GetTodoList$Request {
 }
 
 export interface GetTodoList$Response {
-    lists: TodoListRow[];
+    items: GetTodoList$Response$Item[];
 }
 
-export interface TodoListRow {
+export interface GetTodoList$Response$Item {
+    checked: boolean;
     id: number;
     name: string;
+}
+
+export interface UncheckTodoItem$Request {
+}
+
+export interface UncheckTodoItem$Response {
 }
 

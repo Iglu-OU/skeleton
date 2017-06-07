@@ -5,6 +5,7 @@ CREATE TABLE todo_list (
 
 CREATE TABLE todo_item (
   id BIGSERIAL PRIMARY KEY,
+--   todo_list_id BIGINT NOT NULL REFERENCES todo_list (id),
   name text,
   checked BOOLEAN NOT NULL,
   created_by BIGINT
