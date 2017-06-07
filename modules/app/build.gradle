@@ -9,9 +9,12 @@ dependencies {
         }
     }
 
-    new File(rootDir, 'modules').eachDir {
-        if (it.name.startsWith("front-")) {
-            runtime project(":modules:${it.name}")
-        }
-    }
+}
+
+// TODO: mõtle parem nimi (Meelis Lehtmets, 2017-06-07)
+task run {
+    dependsOn processResources
+    // TODO: kuidas käivita kõik taskid, üksteisest sõltumatulit (Meelis Lehtmets, 2017-06-07)
+//    dependsOn rootProject.getTasksByName('generateApi', true)
+//    dependsOn rootProject.getTasksByName('generateDao', true)
 }
