@@ -2,6 +2,12 @@ plugins {
     id 'com.moowork.node' version '1.1.1'
 }
 
+
+node {
+  version = '8.0.0'
+  download = true
+}
+
 evaluationDependsOn(':tools:apigen')
 
 task generateApi(type: JavaExec) {
@@ -9,3 +15,23 @@ task generateApi(type: JavaExec) {
     main = "ee.iglu.skeleton.tools.apigen.TypeScriptGenerator"
     args = ["$projectDir/src/api", "com.example"]
 }
+
+task frontBuild(type: NodeTask) {
+  inputs.files fileTree(dir: 'src', exclude: 'environment.ts')
+  script = file('node_modules/.bin/au')
+  args = ['build']
+}
+
+task frontCopy(type: Copy, dependsOn: frontBuild) {
+  from ('.') {
+    include 'scripts/**'
+    include 'index.html'
+  }
+  into '../app/src/main/resources/static'
+}
+
+task clean {
+  delete '../app/src/main/resources/static'
+}
+
+project(':modules:app').tasks.processResources.dependsOn(frontCopy)
