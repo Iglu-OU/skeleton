@@ -35,7 +35,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TodoItem extends TableImpl<TodoItemRecord> {
 
-    private static final long serialVersionUID = 311842009;
+    private static final long serialVersionUID = -1948450643;
 
     /**
      * The reference instance of <code>public.todo_item</code>
@@ -69,6 +69,11 @@ public class TodoItem extends TableImpl<TodoItemRecord> {
      * The column <code>public.todo_item.created_by</code>.
      */
     public final TableField<TodoItemRecord, Long> CREATED_BY = createField("created_by", org.jooq.impl.SQLDataType.BIGINT, this, "");
+
+    /**
+     * The column <code>public.todo_item.deleted</code>.
+     */
+    public final TableField<TodoItemRecord, Boolean> DELETED = createField("deleted", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
     /**
      * Create a <code>public.todo_item</code> table reference

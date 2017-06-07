@@ -37,4 +37,10 @@ export class App {
     });
   }
 
+  clear(){
+    this.api.todo.clearTodoList().then(response => {
+      this.reload();
+    });
+  }
+
 }
