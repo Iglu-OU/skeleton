@@ -5,11 +5,10 @@ import {ApiClient} from "./api-client";
 
 import {
   AddTodoItem$Request, AddTodoItem$Response,
-  CheckTodoItem$Request, CheckTodoItem$Response,
   ClearTodoList$Request, ClearTodoList$Response,
   DeleteTodoItem$Request, DeleteTodoItem$Response,
   GetTodoList$Request, GetTodoList$Response,
-  UncheckTodoItem$Request, UncheckTodoItem$Response,
+  SetTodoItemChecked$Request, SetTodoItemChecked$Response,
 } from "./api-types";
 
 @autoinject
@@ -28,9 +27,6 @@ export class TodoOperations {
   addTodoItem(request: AddTodoItem$Request): Promise<AddTodoItem$Response> {
     return this.api.execute("addTodoItem", request);
   }
-  checkTodoItem(): Promise<CheckTodoItem$Response> {
-    return this.api.execute("checkTodoItem", {});
-  }
   clearTodoList(): Promise<ClearTodoList$Response> {
     return this.api.execute("clearTodoList", {});
   }
@@ -40,8 +36,8 @@ export class TodoOperations {
   getTodoList(): Promise<GetTodoList$Response> {
     return this.api.execute("getTodoList", {});
   }
-  uncheckTodoItem(): Promise<UncheckTodoItem$Response> {
-    return this.api.execute("uncheckTodoItem", {});
+  setTodoItemChecked(request: SetTodoItemChecked$Request): Promise<SetTodoItemChecked$Response> {
+    return this.api.execute("setTodoItemChecked", request);
   }
 
 }

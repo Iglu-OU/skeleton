@@ -5,12 +5,6 @@ export interface AddTodoItem$Request {
 export interface AddTodoItem$Response {
 }
 
-export interface CheckTodoItem$Request {
-}
-
-export interface CheckTodoItem$Response {
-}
-
 export interface ClearTodoList$Request {
 }
 
@@ -36,9 +30,11 @@ export interface GetTodoList$Response$Item {
     name: string;
 }
 
-export interface UncheckTodoItem$Request {
+export interface SetTodoItemChecked$Request {
+    checked: boolean;
+    itemId: number;
 }
 
-export interface UncheckTodoItem$Response {
+export interface SetTodoItemChecked$Response {
 }
 

@@ -3,11 +3,13 @@ package com.example.todo.api;
 import com.example.BaseMethod;
 import com.example.PrototypeComponent;
 import com.example.todo.dao.generated.tables.daos.TodoItemDao;
+import com.example.todo.dao.generated.tables.pojos.TodoItemRow;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
 @PrototypeComponent
@@ -37,6 +39,7 @@ public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Res
 
     public Response execute() {
         List<Response.Item> all = todoItemDao.findAll().stream()
+                .sorted(comparing(TodoItemRow::getId))
                 .map(row -> new Response.Item(row.getId(),
                 row.getName(),
                 row.getChecked()))

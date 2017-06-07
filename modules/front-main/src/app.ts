@@ -27,4 +27,14 @@ export class App {
       this.reload();
     });
   }
+
+  check(itemId, checked) {
+    this.api.todo.setTodoItemChecked({
+      itemId: itemId,
+      checked: !checked,
+    }).then(response => {
+      this.reload();
+    });
+  }
+
 }

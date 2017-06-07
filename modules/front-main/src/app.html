@@ -6,5 +6,8 @@
     <button type="submit">Submit</button>
   </form>
 
-  <p repeat.for="item of todoList.items">${item.name}</p>
+  <p repeat.for="item of todoList.items">
+    <input type="checkbox" checked.bind="item.checked" click.delegate="check(item.id, item.checked)">
+    ${item.name}
+  </p>
 </template>
