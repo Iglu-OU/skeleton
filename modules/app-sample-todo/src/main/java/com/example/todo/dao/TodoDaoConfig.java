@@ -1,5 +1,6 @@
 package com.example.todo.dao;
 
+import com.example.todo.dao.generated.tables.daos.TodoItemDao;
 import com.example.todo.dao.generated.tables.daos.TodoListDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -16,4 +17,8 @@ class TodoDaoConfig {
         return new TodoListDao(configuration);
     }
 
+    @Bean
+    TodoItemDao todoItemDao() {
+        return new TodoItemDao(configuration);
+    }
 }
