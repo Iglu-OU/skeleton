@@ -8,4 +8,10 @@ dependencies {
             runtime project(":modules:${it.name}")
         }
     }
+
+    new File(rootDir, 'modules').eachDir {
+        if (it.name.startsWith("front-")) {
+            runtime project(":modules:${it.name}")
+        }
+    }
 }

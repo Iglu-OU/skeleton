@@ -12,7 +12,7 @@ public class SampleController {
 
     private final Greeter greeter;
 
-    @RequestMapping("/")
+    @RequestMapping("/greeter")
     @ResponseBody
     String home() {
         // Pebble classes are not visible thanks to implementation scope
