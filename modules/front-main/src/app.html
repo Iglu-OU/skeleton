@@ -10,4 +10,7 @@
     <input type="checkbox" checked.bind="item.checked" click.delegate="check(item.id, item.checked)">
     ${item.name}
   </p>
+  <form submit.delegate="clear()">
+    <button type="submit">Clear</button>
+  </form>
 </template>

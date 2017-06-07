@@ -4,7 +4,7 @@ plugins {
 
 
 node {
-  version = '8.0.0'
+  version = '6.11.0'
   download = true
 }
 
@@ -18,7 +18,7 @@ task generateApi(type: JavaExec) {
 
 task frontBuild(type: NodeTask) {
   inputs.files fileTree(dir: 'src', exclude: 'environment.ts')
-  script = file('node_modules/.bin/au')
+  script = file('node_modules/aurelia-cli/bin/aurelia-cli.js')
   args = ['build']
 }
 

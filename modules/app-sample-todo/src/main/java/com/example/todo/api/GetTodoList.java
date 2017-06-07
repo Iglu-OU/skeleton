@@ -38,7 +38,7 @@ public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Res
     private final TodoItemDao todoItemDao;
 
     public Response execute() {
-        List<Response.Item> all = todoItemDao.findAll().stream()
+        List<Response.Item> all = todoItemDao.fetchByDeleted(false).stream()
                 .sorted(comparing(TodoItemRow::getId))
                 .map(row -> new Response.Item(row.getId(),
                 row.getName(),

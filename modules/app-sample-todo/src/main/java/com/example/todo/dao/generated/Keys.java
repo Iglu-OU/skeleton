@@ -8,15 +8,16 @@ import com.example.todo.dao.generated.tables.TodoItem;
 import com.example.todo.dao.generated.tables.TodoList;
 import com.example.todo.dao.generated.tables.records.TodoItemRecord;
 import com.example.todo.dao.generated.tables.records.TodoListRecord;
+
+import javax.annotation.Generated;
+
 import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
 
-import javax.annotation.Generated;
-
 
 /**
- * A class modelling foreign key relationships between tables of the <code>public</code>
+ * A class modelling foreign key relationships between tables of the <code>public</code> 
  * schema
  */
 @Generated(
