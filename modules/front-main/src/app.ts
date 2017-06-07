@@ -42,8 +42,5 @@ export class App {
       this.reload();
     });
   }
-  // clear(){
-  //   alert("Clear")
-  // }
 
 }
