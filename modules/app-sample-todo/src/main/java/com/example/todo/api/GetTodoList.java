@@ -27,6 +27,7 @@ public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Res
             private final Long id;
             private final String name;
             private final boolean checked;
+            private final boolean deleted;
         }
     }
 
@@ -38,11 +39,12 @@ public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Res
     private final TodoItemDao todoItemDao;
 
     public Response execute() {
-        List<Response.Item> all = todoItemDao.findAll().stream()
+        List<Response.Item> all = todoItemDao.fetchByDeleted(false).stream()
                 .sorted(comparing(TodoItemRow::getId))
                 .map(row -> new Response.Item(row.getId(),
                 row.getName(),
-                row.getChecked()))
+                row.getChecked(),
+                        row.getDeleted()))
                 .collect(toList());
 
         return new Response(all);

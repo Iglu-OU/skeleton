@@ -5,6 +5,7 @@ import {ApiService} from "./api/api.service";
 export class App {
   private todoList;
   itemName;
+  deleted;
 
   constructor(private api: ApiService) {
   }
@@ -37,4 +38,13 @@ export class App {
     });
   }
 
+
+  delete(itemId,deleted){
+   this.api.todo.deleteTodoItem({
+   itemId: itemId,
+   deleted: !deleted,
+   }).then(response => {
+   this.reload()
+   });
+   }
 }

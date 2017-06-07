@@ -7,11 +7,13 @@ package com.example.todo.dao.generated.tables.daos;
 import com.example.todo.dao.generated.tables.TodoList;
 import com.example.todo.dao.generated.tables.pojos.TodoListRow;
 import com.example.todo.dao.generated.tables.records.TodoListRecord;
-import org.jooq.Configuration;
-import org.jooq.impl.DAOImpl;
+
+import java.util.List;
 
 import javax.annotation.Generated;
-import java.util.List;
+
+import org.jooq.Configuration;
+import org.jooq.impl.DAOImpl;
 
 
 /**

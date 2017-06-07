@@ -8,5 +8,6 @@ CREATE TABLE todo_item (
 --   todo_list_id BIGINT NOT NULL REFERENCES todo_list (id),
   name text,
   checked BOOLEAN NOT NULL,
+  deleted BOOLEAN NOT NULL,
   created_by BIGINT
 );

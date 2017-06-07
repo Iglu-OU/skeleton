@@ -27,7 +27,7 @@ public class AddTodoItem extends BaseMethod<Request, Response> {
     }
 
     public Response execute() {
-        todoItemDao.insert(new TodoItemRow(null, request.getName(), false, null));
+        todoItemDao.insert(new TodoItemRow(null, request.getName(), false,false, null));
         return new Response();
     }
 }
