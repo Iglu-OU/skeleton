@@ -4,6 +4,8 @@
   <form submit.delegate="submit()">
     <input type="text" value.bind="itemName"/>
     <button type="submit">Submit</button>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
   </form>
 
   <p repeat.for="item of todoList.items">
