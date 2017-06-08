@@ -11,4 +11,7 @@
     ${item.name}
     <button type="button" click.delegate="deleteItem(item.id)">Del</button>
   </p>
+  <form submit.delegate="clear()">
+    <button type="submit">Clear</button>
+  </form>
 </template>
