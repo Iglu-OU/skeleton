@@ -9,5 +9,6 @@
   <p repeat.for="item of todoList.items">
     <input type="checkbox" checked.bind="item.checked" click.delegate="check(item.id, item.checked)">
     ${item.name}
+    <button type="button" click.delegate="deleteItem(item.id)">Del</button>
   </p>
 </template>

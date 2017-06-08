@@ -16,7 +16,6 @@
             <option value="$PROJECT_DIR$/modules/app-sample-todo" />
             <option value="$PROJECT_DIR$/modules/config" />
             <option value="$PROJECT_DIR$/modules/front-main" />
-            <option value="$PROJECT_DIR$/modules/lib-autoui" />
             <option value="$PROJECT_DIR$/modules/lib-dao" />
             <option value="$PROJECT_DIR$/modules/lib-namer" />
             <option value="$PROJECT_DIR$/modules/lib-rpc" />

@@ -12,6 +12,7 @@ export interface ClearTodoList$Response {
 }
 
 export interface DeleteTodoItem$Request {
+    itemID: number;
 }
 
 export interface DeleteTodoItem$Response {

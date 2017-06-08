@@ -37,4 +37,11 @@ export class App {
     });
   }
 
+  deleteItem(itemId){
+    this.api.todo.deleteTodoItem({
+      itemID: itemId
+    }).then(response => {
+      this.reload();
+    });
+  }
 }

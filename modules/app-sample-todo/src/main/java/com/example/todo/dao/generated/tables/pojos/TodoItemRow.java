@@ -22,12 +22,13 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TodoItemRow implements Serializable {
 
-    private static final long serialVersionUID = -2057086130;
+    private static final long serialVersionUID = 1802625417;
 
     private Long    id;
     private String  name;
     private Boolean checked;
     private Long    createdBy;
+    private Boolean deleted;
 
     public TodoItemRow() {}
 
@@ -36,18 +37,21 @@ public class TodoItemRow implements Serializable {
         this.name = value.name;
         this.checked = value.checked;
         this.createdBy = value.createdBy;
+        this.deleted = value.deleted;
     }
 
     public TodoItemRow(
         Long    id,
         String  name,
         Boolean checked,
-        Long    createdBy
+        Long    createdBy,
+        Boolean deleted
     ) {
         this.id = id;
         this.name = name;
         this.checked = checked;
         this.createdBy = createdBy;
+        this.deleted = deleted;
     }
 
     public Long getId() {
@@ -82,6 +86,14 @@ public class TodoItemRow implements Serializable {
         this.createdBy = createdBy;
     }
 
+    public Boolean getDeleted() {
+        return this.deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("TodoItemRow (");
@@ -90,6 +102,7 @@ public class TodoItemRow implements Serializable {
         sb.append(", ").append(name);
         sb.append(", ").append(checked);
         sb.append(", ").append(createdBy);
+        sb.append(", ").append(deleted);
 
         sb.append(")");
         return sb.toString();
