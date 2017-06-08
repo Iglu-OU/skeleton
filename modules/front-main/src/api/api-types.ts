@@ -1,5 +1,6 @@
 export interface AddTodoItem$Request {
     name: string;
+    sessionCookie: string;
 }
 
 export interface AddTodoItem$Response {

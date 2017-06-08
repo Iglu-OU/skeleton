@@ -22,7 +22,8 @@ export class App {
 
   submit() {
     this.api.todo.addTodoItem({
-      name: this.itemName
+      name: this.itemName,
+      sessionCookie: this.getCookie("SESSION")
     }).then(response => {
       this.reload();
     });
@@ -51,4 +52,17 @@ export class App {
     });
   }
 
+  getCookie(name: string): string {
+    const nameLenPlus = (name.length + 1);
+    alert(document.cookie);
+    return document.cookie
+        .split(';')
+        .map(c => c.trim())
+        .filter(cookie => {
+          return cookie.substring(0, nameLenPlus) === `${name}=`;
+        })
+        .map(cookie => {
+          return decodeURIComponent(cookie.substring(nameLenPlus));
+        })[0] || null;
+  }
 }

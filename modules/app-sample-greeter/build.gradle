@@ -5,7 +5,6 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-web',
             "org.springframework.boot:spring-boot-starter-data-redis:1.5.3.RELEASE",
             "org.springframework.session:spring-session:1.3.1.RELEASE",
-            "org.springframework.boot:spring-boot-starter-security:1.5.3.RELEASE",
             project(':modules:lib-sample-greeter'),
     )
     testCompile "org.springframework.boot:spring-boot-starter-test:1.5.3.RELEASE"

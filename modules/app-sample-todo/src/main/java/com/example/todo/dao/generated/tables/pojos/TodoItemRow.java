@@ -22,13 +22,14 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TodoItemRow implements Serializable {
 
-    private static final long serialVersionUID = 1802625417;
+    private static final long serialVersionUID = -989087911;
 
     private Long    id;
     private String  name;
     private Boolean checked;
     private Long    createdBy;
     private Boolean deleted;
+    private String  session;
 
     public TodoItemRow() {}
 
@@ -38,6 +39,7 @@ public class TodoItemRow implements Serializable {
         this.checked = value.checked;
         this.createdBy = value.createdBy;
         this.deleted = value.deleted;
+        this.session = value.session;
     }
 
     public TodoItemRow(
@@ -45,13 +47,15 @@ public class TodoItemRow implements Serializable {
         String  name,
         Boolean checked,
         Long    createdBy,
-        Boolean deleted
+        Boolean deleted,
+        String  session
     ) {
         this.id = id;
         this.name = name;
         this.checked = checked;
         this.createdBy = createdBy;
         this.deleted = deleted;
+        this.session = session;
     }
 
     public Long getId() {
@@ -94,6 +98,14 @@ public class TodoItemRow implements Serializable {
         this.deleted = deleted;
     }
 
+    public String getSession() {
+        return this.session;
+    }
+
+    public void setSession(String session) {
+        this.session = session;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("TodoItemRow (");
@@ -103,6 +115,7 @@ public class TodoItemRow implements Serializable {
         sb.append(", ").append(checked);
         sb.append(", ").append(createdBy);
         sb.append(", ").append(deleted);
+        sb.append(", ").append(session);
 
         sb.append(")");
         return sb.toString();

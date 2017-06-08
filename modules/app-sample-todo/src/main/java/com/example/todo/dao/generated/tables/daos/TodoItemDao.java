@@ -92,4 +92,11 @@ public class TodoItemDao extends DAOImpl<TodoItemRecord, TodoItemRow, Long> {
     public List<TodoItemRow> fetchByDeleted(Boolean... values) {
         return fetch(TodoItem.TODO_ITEM.DELETED, values);
     }
+
+    /**
+     * Fetch records that have <code>session IN (values)</code>
+     */
+    public List<TodoItemRow> fetchBySession(String... values) {
+        return fetch(TodoItem.TODO_ITEM.SESSION, values);
+    }
 }

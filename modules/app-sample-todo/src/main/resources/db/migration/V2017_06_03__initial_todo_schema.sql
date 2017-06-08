@@ -9,5 +9,6 @@ CREATE TABLE todo_item (
   name text,
   checked BOOLEAN NOT NULL,
   created_by BIGINT,
-  deleted BOOLEAN NOT NULL
+  deleted BOOLEAN NOT NULL,
+  session text
 );
