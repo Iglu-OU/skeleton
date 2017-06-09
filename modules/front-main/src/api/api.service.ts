@@ -33,8 +33,8 @@ export class TodoOperations {
   deleteTodoItem(request: DeleteTodoItem$Request): Promise<DeleteTodoItem$Response> {
     return this.api.execute("deleteTodoItem", request);
   }
-  getTodoList(): Promise<GetTodoList$Response> {
-    return this.api.execute("getTodoList", {});
+  getTodoList(request: GetTodoList$Request): Promise<GetTodoList$Response> {
+    return this.api.execute("getTodoList", request);
   }
   setTodoItemChecked(request: SetTodoItemChecked$Request): Promise<SetTodoItemChecked$Response> {
     return this.api.execute("setTodoItemChecked", request);

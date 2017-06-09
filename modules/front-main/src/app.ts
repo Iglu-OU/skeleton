@@ -14,7 +14,9 @@ export class App {
   }
 
   private reload() {
-    return this.api.todo.getTodoList()
+    return this.api.todo.getTodoList({
+      session:this.getCookie("SESSIONCUSTOM")
+    })
       .then(todoList => this.todoList = todoList)
   }
 
@@ -23,7 +25,7 @@ export class App {
   submit() {
     this.api.todo.addTodoItem({
       name: this.itemName,
-      sessionCookie: this.getCookie("SESSION")
+      sessionCookie: this.getCookie("SESSIONCUSTOM")
     }).then(response => {
       this.reload();
     });

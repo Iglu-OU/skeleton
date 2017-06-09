@@ -33,18 +33,19 @@ public class GetTodoList extends BaseMethod<GetTodoList.Request, GetTodoList.Res
     @Getter
     @RequiredArgsConstructor
     public static class Request {
+        private final String session;
     }
 
     private final TodoItemDao todoItemDao;
 
     public Response execute() {
-        List<Response.Item> all = todoItemDao.fetchByDeleted(false).stream()
+        List<Response.Item> all = todoItemDao.fetchBySession(request.getSession()).stream()
+                .filter(row-> !row.getDeleted())
                 .sorted(comparing(TodoItemRow::getId))
                 .map(row -> new Response.Item(row.getId(),
                 row.getName(),
                 row.getChecked()))
                 .collect(toList());
-
         return new Response(all);
     }
 

@@ -20,6 +20,7 @@ export interface DeleteTodoItem$Response {
 }
 
 export interface GetTodoList$Request {
+    session: string;
 }
 
 export interface GetTodoList$Response {
