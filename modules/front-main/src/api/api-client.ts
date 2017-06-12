@@ -12,6 +12,7 @@ export class ApiClient {
       method: 'post',
       body: json(request),
       headers: {},
+      credentials: "same-origin",
     };
 
     return this.http.fetch("/api/rpc/" + method, init)
