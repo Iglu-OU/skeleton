@@ -12,6 +12,8 @@ export interface ClearTodoList$Response {
 }
 
 export interface DeleteTodoItem$Request {
+    deleted: boolean;
+    itemId: number;
 }
 
 export interface DeleteTodoItem$Response {
@@ -26,6 +28,7 @@ export interface GetTodoList$Response {
 
 export interface GetTodoList$Response$Item {
     checked: boolean;
+    deleted: boolean;
     id: number;
     name: string;
 }

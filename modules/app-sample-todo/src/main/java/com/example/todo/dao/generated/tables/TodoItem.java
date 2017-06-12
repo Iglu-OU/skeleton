@@ -35,7 +35,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TodoItem extends TableImpl<TodoItemRecord> {
 
-    private static final long serialVersionUID = 311842009;
+    private static final long serialVersionUID = -1116033467;
 
     /**
      * The reference instance of <code>public.todo_item</code>
@@ -64,6 +64,11 @@ public class TodoItem extends TableImpl<TodoItemRecord> {
      * The column <code>public.todo_item.checked</code>.
      */
     public final TableField<TodoItemRecord, Boolean> CHECKED = createField("checked", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
+
+    /**
+     * The column <code>public.todo_item.deleted</code>.
+     */
+    public final TableField<TodoItemRecord, Boolean> DELETED = createField("deleted", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false), this, "");
 
     /**
      * The column <code>public.todo_item.created_by</code>.

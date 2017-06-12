@@ -27,6 +27,7 @@ class PebbleGreeter implements Greeter {
     @Override
     public String hello(String name) {
         StringWriter stringWriter = new StringWriter();
+
         try {
             engine.getTemplate("Hello, {{name}} from Pebble!")
                     .evaluate(stringWriter, ImmutableMap.of("name", name));

@@ -80,6 +80,13 @@ public class TodoItemDao extends DAOImpl<TodoItemRecord, TodoItemRow, Long> {
     }
 
     /**
+     * Fetch records that have <code>deleted IN (values)</code>
+     */
+    public List<TodoItemRow> fetchByDeleted(Boolean... values) {
+        return fetch(TodoItem.TODO_ITEM.DELETED, values);
+    }
+
+    /**
      * Fetch records that have <code>created_by IN (values)</code>
      */
     public List<TodoItemRow> fetchByCreatedBy(Long... values) {
