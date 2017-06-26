@@ -2,7 +2,6 @@ plugins {
     id 'com.moowork.node' version '1.1.1'
 }
 
-
 node {
   version = '6.11.0'
   download = true
@@ -16,7 +15,7 @@ task generateApi(type: JavaExec) {
     args = ["$projectDir/src/api", "com.example"]
 }
 
-task frontBuild(type: NodeTask) {
+task frontBuild(type: NodeTask, dependsOn: npmInstall) {
   inputs.files fileTree(dir: 'src', exclude: 'environment.ts')
   script = file('node_modules/aurelia-cli/bin/aurelia-cli.js')
   args = ['build']
