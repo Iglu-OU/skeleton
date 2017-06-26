@@ -1,10 +1,10 @@
 apply from: "$rootDir/gradle/spring-boot.gradle"
 
 dependencies {
-    compile project(":app:config")
+    compile project(":app:common")
 
     new File(rootDir, 'app').eachDir {
-        if (it.name != "main" && !it.name.startsWith("front-")) {
+        if (it.name != name && !it.name.startsWith("front-")) {
             runtime project(":app:${it.name}")
         }
     }

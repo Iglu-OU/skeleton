@@ -1,0 +1,16 @@
+apply from: "$rootDir/gradle/java-library.gradle"
+
+if (file("common.gradle").exists()) {
+    apply from: "common.gradle"
+}
+
+dependencies {
+    api(
+            project(":libs:rpc"),
+            'org.springframework:spring-context'
+    )
+
+    implementation(
+            'org.springframework.boot:spring-boot-starter',
+    )
+}

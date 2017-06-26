@@ -7,12 +7,7 @@ apply from: "$rootDir/gradle/dao.gradle"
 apply plugin: 'groovy'
 
 dependencies {
-
-    compile 'org.springframework:spring-context'
-
-    compile project(':app:app-rpc')
-
-    runtime project(':app:config')
+    compile project(':app:common')
 
     testCompile 'org.spockframework:spock-spring'
     testCompile 'org.springframework.boot:spring-boot-starter-test'

@@ -4,9 +4,9 @@
   "platform": {
     "id": "web",
     "displayName": "Web",
-    "output": "static/scripts",
-    "index": "static/index.html",
-    "baseDir": "static"
+    "output": "scripts",
+    "index": "index.html",
+    "baseDir": "."
   },
   "transpiler": {
     "id": "typescript",
@@ -50,9 +50,9 @@
       {
         "id": "web",
         "displayName": "Web",
-        "output": "static/scripts",
-        "index": "static/index.html",
-        "baseDir": "static"
+        "output": "scripts",
+        "index": "index.html",
+        "baseDir": "."
       }
     ],
     "loader": {

@@ -27,7 +27,7 @@ task frontCopy(type: Copy, dependsOn: frontBuild) {
     include 'scripts/**'
     include 'index.html'
   }
-  into '../app/src/main/resources/static'
+  into '../main/src/main/resources/static'
 }
 
 //sourceSets.main.java.setSrcDirs([])
@@ -39,7 +39,7 @@ task frontCopy(type: Copy, dependsOn: frontBuild) {
 //processResources.dependsOn frontCopy
 
 task clean {
-  delete '../app/src/main/resources/static'
+  delete '../main/src/main/resources/static'
 }
 
 project(':app:main').tasks.processResources.dependsOn(frontCopy)

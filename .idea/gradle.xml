@@ -10,11 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app/app-rpc" />
-            <option value="$PROJECT_DIR$/app/app-sample-todo" />
-            <option value="$PROJECT_DIR$/app/config" />
+            <option value="$PROJECT_DIR$/app/common" />
             <option value="$PROJECT_DIR$/app/front-main" />
             <option value="$PROJECT_DIR$/app/main" />
+            <option value="$PROJECT_DIR$/app/sample-todo" />
             <option value="$PROJECT_DIR$/libs" />
             <option value="$PROJECT_DIR$/libs/dao" />
             <option value="$PROJECT_DIR$/libs/namer" />
