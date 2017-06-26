@@ -1,4 +1,4 @@
-rootProject.name = 'modular-monolith-sample'
+rootProject.name = new File(rootDir, 'etc/project-name').text
 
 new File(rootDir, 'modules').eachDir {
     include "modules:${it.name}"
