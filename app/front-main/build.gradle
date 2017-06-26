@@ -5,6 +5,7 @@ plugins {
 node {
   version = '6.11.0'
   download = true
+  workDir = new File(project.gradle.gradleUserHomeDir, "nodejs")
 }
 
 evaluationDependsOn(':tools:apigen')
