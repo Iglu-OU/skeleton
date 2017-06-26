@@ -1,5 +1,5 @@
 dependencies {
-    compile project(':modules:lib-dao')
+    compile project(':libs:dao')
 }
 
 evaluationDependsOn(':tools:daogen')

@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
     compile(
-            project(':modules:lib-rpc'),
+            project(':libs:rpc'),
             'com.google.guava:guava',
             'org.apache.commons:commons-lang3',
             'com.github.raphaeljolivet.java2typescript:java2typescript-jackson:531a24e',
@@ -22,5 +22,5 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-logging',
     )
 
-    runtime project(":modules:app")
+    runtime project(":app:main")
 }

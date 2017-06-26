@@ -1,0 +1,46 @@
+plugins {
+    id 'com.moowork.node' version '1.1.1'
+}
+
+node {
+  version = '6.11.0'
+  download = true
+  workDir = new File(project.gradle.gradleUserHomeDir, "nodejs")
+}
+
+evaluationDependsOn(':tools:apigen')
+evaluationDependsOn(':app:main')
+
+task generateApi(type: JavaExec) {
+    classpath = project(':tools:apigen').sourceSets.main.runtimeClasspath
+    main = "ee.iglu.skeleton.tools.apigen.TypeScriptGenerator"
+    args = ["$projectDir/src/api", "com.example"]
+}
+
+task frontBuild(type: NodeTask, dependsOn: npmInstall) {
+  inputs.files fileTree(dir: 'src', exclude: 'environment.ts')
+  script = file('node_modules/aurelia-cli/bin/aurelia-cli.js')
+  args = ['build']
+}
+
+task frontCopy(type: Copy, dependsOn: frontBuild) {
+  from ('.') {
+    include 'scripts/**'
+    include 'index.html'
+  }
+  into '../main/src/main/resources/static'
+}
+
+//sourceSets.main.java.setSrcDirs([])
+//sourceSets.main.resources.setSrcDirs(['static'])
+//sourceSets.test.java.setSrcDirs([])
+//sourceSets.test.resources.setSrcDirs([])
+
+
+//processResources.dependsOn frontCopy
+
+task clean {
+  delete '../main/src/main/resources/static'
+}
+
+project(':app:main').tasks.processResources.dependsOn(frontCopy)
