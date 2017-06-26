@@ -4,6 +4,10 @@ new File(rootDir, 'modules').eachDir {
     include "modules:${it.name}"
 }
 
+new File(rootDir, 'libs').eachDir {
+    include "libs:${it.name}"
+}
+
 new File(rootDir, 'tools').eachDir {
     include "tools:${it.name}"
 }

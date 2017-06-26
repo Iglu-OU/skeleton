@@ -3,7 +3,7 @@ apply from: "$rootDir/gradle/java-library.gradle"
 dependencies {
 
 	compile(
-			project(":modules:lib-rpc"),
+			project(":libs:rpc"),
 	)
 
 }

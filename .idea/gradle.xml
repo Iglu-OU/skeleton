@@ -9,15 +9,16 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/libs" />
+            <option value="$PROJECT_DIR$/libs/dao" />
+            <option value="$PROJECT_DIR$/libs/namer" />
+            <option value="$PROJECT_DIR$/libs/rpc" />
             <option value="$PROJECT_DIR$/modules" />
             <option value="$PROJECT_DIR$/modules/app" />
             <option value="$PROJECT_DIR$/modules/app-rpc" />
             <option value="$PROJECT_DIR$/modules/app-sample-todo" />
             <option value="$PROJECT_DIR$/modules/config" />
             <option value="$PROJECT_DIR$/modules/front-main" />
-            <option value="$PROJECT_DIR$/modules/lib-dao" />
-            <option value="$PROJECT_DIR$/modules/lib-namer" />
-            <option value="$PROJECT_DIR$/modules/lib-rpc" />
             <option value="$PROJECT_DIR$/tools" />
             <option value="$PROJECT_DIR$/tools/apigen" />
             <option value="$PROJECT_DIR$/tools/daogen" />
