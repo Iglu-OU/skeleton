@@ -22,5 +22,5 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-logging',
     )
 
-    runtime project(":modules:app")
+    runtime project(":app:main")
 }

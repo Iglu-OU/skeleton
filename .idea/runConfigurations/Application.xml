@@ -4,7 +4,7 @@
     <option name="SPRING_BOOT_MAIN_CLASS" value="ee.iglu.skeleton.Application" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <option name="ALTERNATIVE_JRE_PATH" />
-    <module name="app_main" />
+    <module name="main_main" />
     <envs>
       <env name="SPRING_PROFILES_ACTIVE" value="devel" />
     </envs>

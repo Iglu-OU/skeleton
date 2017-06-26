@@ -14,5 +14,5 @@ npm-debug.log
 !/.idea/vcs.xml
 
 
-/modules/front-main/scripts/
-/modules/app/src/main/resources/static
+/app/front-main/scripts/
+/app/main/src/main/resources/static

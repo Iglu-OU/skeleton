@@ -7,22 +7,32 @@
     <bytecodeTargetLevel>
       <module name="apigen_main" target="1.8" />
       <module name="apigen_test" target="1.8" />
+      <module name="app-app-rpc_main" target="1.8" />
+      <module name="app-app-rpc_test" target="1.8" />
+      <module name="app-app-sample-todo_main" target="1.8" />
+      <module name="app-app-sample-todo_test" target="1.8" />
       <module name="app-rpc_main" target="1.8" />
       <module name="app-rpc_test" target="1.8" />
       <module name="app-sample-todo_main" target="1.8" />
       <module name="app-sample-todo_test" target="1.8" />
       <module name="app_main" target="1.8" />
       <module name="app_test" target="1.8" />
+      <module name="config_main" target="1.8" />
+      <module name="config_test" target="1.8" />
       <module name="dao_main" target="1.8" />
       <module name="dao_test" target="1.8" />
       <module name="daogen_main" target="1.8" />
       <module name="daogen_test" target="1.8" />
+      <module name="front-main_main" target="1.8" />
+      <module name="front-main_test" target="1.8" />
       <module name="lib-dao_main" target="1.8" />
       <module name="lib-dao_test" target="1.8" />
       <module name="lib-namer_main" target="1.8" />
       <module name="lib-namer_test" target="1.8" />
       <module name="lib-rpc_main" target="1.8" />
       <module name="lib-rpc_test" target="1.8" />
+      <module name="main_main" target="1.8" />
+      <module name="main_test" target="1.8" />
       <module name="modules-config_main" target="1.8" />
       <module name="modules-config_test" target="1.8" />
       <module name="namer_main" target="1.8" />

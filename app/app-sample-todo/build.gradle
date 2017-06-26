@@ -1,0 +1,20 @@
+ext {
+    daogenPackageName = "com.example.todo.dao.generated"
+}
+
+apply from: "$rootDir/gradle/java.gradle"
+apply from: "$rootDir/gradle/dao.gradle"
+apply plugin: 'groovy'
+
+dependencies {
+
+    compile 'org.springframework:spring-context'
+
+    compile project(':app:app-rpc')
+
+    runtime project(':app:config')
+
+    testCompile 'org.spockframework:spock-spring'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testRuntime 'org.springframework.boot:spring-boot-starter-logging'
+}
